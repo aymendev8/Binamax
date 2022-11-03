@@ -10,14 +10,14 @@ require_once("header.php");
 
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Binamax</h2>
-              <p class="text-white-50 mb-5">Entrer vos identifiant pour vous connectez !</p>
+              <p class="text-white-50 mb-5">Entrer vos identifiants pour vous connectez !</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="adresse mail" />
+                <input type="email" id="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" />
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="mot de passe"  />
+                <input type="password" id="mdp" class="form-control form-control-lg" placeholder="mot de passe"  />
               </div>
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Se connecter</button>
             </div>
