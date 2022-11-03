@@ -4,7 +4,7 @@ CREATE TABLE utilisateurs (
 	prenom varchar(30),
 	nom varchar(30),
 	mail varchar(50),
-	mot_de_passe varchar(30),
+	mot_de_passe varchar(255),
     administrateur bit, 
     PRIMARY KEY (ID)
 )
