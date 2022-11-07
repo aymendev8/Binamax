@@ -1,5 +1,8 @@
 <?php
 require_once("header.php");
+require_once("navbar.php");
+if (!isset($_SESSION["id"])) {
+    header("Location:accueil.php");
+}
 ?>
-
-<h1>WOW SA MARCHE JVAI TOUT CASSER <?= $_SESSION["username"] ?></h1>
+<p> <?= $_SESSION["username"] ?></p>

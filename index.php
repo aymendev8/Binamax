@@ -30,11 +30,11 @@ if (isset($_POST['username']) && isset($_POST['mdp'])) {
               <p class="text-white-50 mb-5">Entrer vos identifiants pour vous connectez !</p>
               <form action="" method="POST">
                 <div class="form-outline form-white mb-4">
-                  <input value="admin" type="text" name="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" />
+                  <input type="text" name="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" />
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input value="admin123" type="password" name="mdp" class="form-control form-control-lg" placeholder="mot de passe" />
+                  <input type="password" name="mdp" class="form-control form-control-lg" placeholder="mot de passe" />
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Se connecter</button>
               </form>
