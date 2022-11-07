@@ -5,6 +5,6 @@ CREATE TABLE utilisateurs (
 	nom varchar(30),
 	mail varchar(50),
 	mot_de_passe varchar(255),
-    administrateur bit, 
+    administrateur Boolean, 
     PRIMARY KEY (ID)
 )
