@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#">Mes paris</a>
-                <a class="nav-link active" aria-current="page" href="#">Mon profil</a>
+                <a class="nav-link active" aria-current="page" href="profil.php">Mon profil</a>
                 <a class="nav-link active" aria-current="page" href="sedeco.php">se déconnecter</a>
                 <a class>
             </div>

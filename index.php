@@ -12,6 +12,7 @@ if (isset($_POST['username']) && isset($_POST['mdp'])) {
       $_SESSION["nom"] = $user["nom"];
       $_SESSION["username"] = $user["username"];
       $_SESSION["mail"] = $user["mail"];
+      $_SESSION["prenom"] = $user["prenom"];
     }
     header('Location:accueil.php');
     die;
