@@ -1,0 +1,41 @@
+
+section#list_match .container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+section#list_match .container .tableau {
+    align-items: center;
+    border-collapse: collapse;
+    min-width: 900px;
+    width: auto;
+    box-shadow: 0 5px 50px rgba(0,0,0,0,0.50);
+    cursor: pointer;
+    margin: auto ;
+    border: 2px solid white;
+    margin-bottom: 50px;
+}
+
+section#list_match .container .tableau th {
+    background-color:white;
+    color:  black;
+    font-weight: bold;
+}
+
+section#list_match .container .tableau th,td {
+    padding: 10px 10px;
+    text-align: left;
+}
+
+section#list_match .container .tableau TD {
+    background-color: #3C279D;
+    color: white;
+    font-weight: bold;
+}
+
+section#list_match .container .tableau tbody tr,th,td {
+    border-bottom: 3px solid white;
+    
+}
