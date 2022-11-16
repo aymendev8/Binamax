@@ -26,7 +26,7 @@ if (isset($_POST["equipe1"])) {
 <link rel="stylesheet" href="Styles/edit.css">
 <link rel="stylesheet" href="Styles/staffmenu.css">
 <br>
-            <section id ="edit">
+            <section id="edit">
             <div class="container">
                 <div class="title">
                     <h2>Creer un match</h2>
@@ -39,10 +39,10 @@ if (isset($_POST["equipe1"])) {
                     <input type="int" name="cote_equipe1"  placeholder="la cote de equipe 1" required>
                     <input type="int" name="cote_equipe2"  placeholder="la cote de equipe 2" required>
                     <input type="int" name="cote_nul"  placeholder="la cote match nul " required>
-                    <button type="submit" name="submit">Creer</button>
+                    <button type="submit" name="submit" id="creer">Creer</button>
                 </form>
             </section>
-        <section id="list_match">
+        <section class="liste">
             <div class="container">
                 <div class="title">
                     <h2>Liste des matchs</h2>
@@ -56,6 +56,7 @@ if (isset($_POST["equipe1"])) {
                         <th>Cote E1</th>
                         <th>Cote nul</th>
                         <th>Cote E2</th>
+                        <th>Modifier</th>
                         <th>Supprimer</th>
                     </tr>
                     <?php
@@ -70,7 +71,46 @@ if (isset($_POST["equipe1"])) {
                         echo "<td>" . $match["cote_equipe1"] . "</td>";
                         echo "<td>" . $match["cote_nul"] . "</td>";
                         echo "<td>" . $match["cote_equipe2"] . "</td>";
+                        echo "<td><a href='modifier_match.php?id=" . $match["ID"] . "'>Modifier</a></td>";
                         echo "<td><a href='supprimer_match.php?id=" . $match["ID"] . "'>Supprimer</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </table>
+            </div>
+        </section>
+        <section class="liste">
+            <div class="container">
+                <div class="title">
+                    <h2>Liste des utilisateurs</h2>
+                </div>
+                <table class ="tableau">
+                    <tr>
+                        <th>Username</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Mail</th>
+                        <th>Argent</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    <?php
+                    $req = $bdd->prepare("SELECT * FROM utilisateurs");
+                    $req->execute();
+                    while ($user = $req->fetch()) {
+                        echo "<tr>";
+                        echo "<td>" . $user["username"] . "</td>";
+                        echo "<td>" . $user["nom"] . "</td>";
+                        echo "<td>" . $user["prenom"] . "</td>";
+                        echo "<td>" . $user["mail"] . "</td>";
+                        echo "<td>" . $user["argent"] . ' €' ."</td>";
+                        // empecher la modification d'un admin
+                        if ($user["administrateur"] == 0) {
+                        echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Modifier</a></td>";
+                        } else {
+                            echo "<td></td>";
+                        }
+                        echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Supprimer</a></td>";
                         echo "</tr>";
                     }
                     ?>
