@@ -1,12 +1,12 @@
 
-section#list_match .container h2 {
+section.liste .container h2 {
     color: white;
     text-align: center;
     margin-bottom: 50px;
 }
 
 
-section#list_match .container .tableau {
+section.liste .container .tableau {
     align-items: center;
     border-collapse: collapse;
     min-width: 900px;
@@ -18,24 +18,27 @@ section#list_match .container .tableau {
     margin-bottom: 50px;
 }
 
-section#list_match .container .tableau th {
+section.liste .container .tableau th {
     background-color:white;
     color:  black;
     font-weight: bold;
 }
 
-section#list_match .container .tableau th,td {
+section.liste .container .tableau th,td {
     padding: 10px 10px;
     text-align: left;
 }
 
-section#list_match .container .tableau TD {
+section.liste .container .tableau TD {
     background-color: #3C279D;
     color: white;
     font-weight: bold;
 }
-
-section#list_match .container .tableau tbody tr,th,td {
+section.liste .container .tableau tr td a {
+    color: white;
+    text-decoration: none;
+}
+section.liste .container .tableau tbody tr,th,td {
     border-bottom: 3px solid white;
     
 }
