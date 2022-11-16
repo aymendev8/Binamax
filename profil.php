@@ -4,8 +4,8 @@ if (!isset($_SESSION["id"])) {
     header("Location:sedeco.php");
 }
 if (isset($_POST['username']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['mail'])) {
-    $heroUpdate = $bdd->prepare('UPDATE utilisateurs SET username = :username, prenom = :prenom, nom = :nom, mail = :mail where id = :id');
-    $heroUpdate->execute([
+    $userUpdate = $bdd->prepare('UPDATE utilisateurs SET username = :username, prenom = :prenom, nom = :nom, mail = :mail where id = :id');
+    $userUpdate->execute([
         "username" => $_POST['username'],
         "prenom" => $_POST['prenom'],
         "nom" => $_POST['nom'],
@@ -22,8 +22,8 @@ if (isset($_POST['username']) && isset($_POST['prenom']) && isset($_POST['nom'])
 }
 
 if (isset($_POST["argent"])){
-    $heroUpdate = $bdd->prepare('UPDATE utilisateurs SET argent = argent + :argent where id = :id');
-    $heroUpdate->execute([
+    $userUpdate = $bdd->prepare('UPDATE utilisateurs SET argent = argent + :argent where id = :id');
+    $userUpdate->execute([
         "argent" => $_POST['argent'],
         "id" => $_SESSION['id']
     ]);
