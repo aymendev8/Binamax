@@ -36,7 +36,7 @@ require_once("navbar.php");
 ?>
 <link rel="stylesheet" href="Styles/edit.css">
 <br>
-            <section id ="edit">
+            <section id="edit">
             <div class="container">
                 <div class="title">
                     <h2>Modifier le profil</h2>
