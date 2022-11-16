@@ -7,5 +7,8 @@ if(isset($_GET['id']) && $_SESSION["administrateur"] == 1 ){
     ]);
     header("Location:staffmenu.php");
     die;
+}else{
+    header("Location:accueil.php");
+    die;
 }
 ?>
