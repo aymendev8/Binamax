@@ -14,6 +14,6 @@
                         <li><a href="sedeco.php"> Se deconnecter </a></li>
                     </ul>
                 </div>
-                <a href="" class="solde">Solde : <?= $_SESSION["argent"] ?> €</a>
+                <a href="profil.php" class="solde">Solde : <?= $_SESSION["argent"] ?> €</a>
             </nav>
 </header>
