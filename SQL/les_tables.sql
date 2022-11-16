@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 16 nov. 2022 à 18:54
+-- Généré le : mer. 16 nov. 2022 à 23:11
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -87,7 +87,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`ID`, `username`, `prenom`, `nom`, `mail`, `mot_de_passe`, `administrateur`, `argent`) VALUES
-(1, 'Aymenn8', 'Aymen', 'Kadri', 'aymenkadri798@gmail.com', '882baf28143fb700b388a87ef561a6e5', NULL, 0),
+(1, 'Aymenn8', 'Aymen', 'Kadri', 'aymenkadri798@gmail.com', '882baf28143fb700b388a87ef561a6e5', NULL, 10),
 (3, 'admin', 'admin', 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 1, 1000),
 (4, 'Rouissimo03', 'Mohamed', 'Rouissi', 'mohamedrouissi@gmail.com', '7463502acdddabd3faa829c197c4f8ec', NULL, 110);
 
@@ -123,7 +123,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `les_matchs`
 --
 ALTER TABLE `les_matchs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `les_paris`
