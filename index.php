@@ -2,7 +2,7 @@
 require_once("header.php");
 
 if (isset($_POST['username']) && isset($_POST['mdp'])) {
-  $checkuser = $bdd->prepare("SELECT id, mot_de_passe,administrateur,nom,prenom,username,mail FROM utilisateurs WHERE username=?");
+  $checkuser = $bdd->prepare("SELECT id, mot_de_passe,administrateur,nom,prenom,username,mail,argent FROM utilisateurs WHERE username=?");
   $checkuser->execute([$_POST['username']]);
   $user = $checkuser->fetch();
   if ($user) {
@@ -13,6 +13,8 @@ if (isset($_POST['username']) && isset($_POST['mdp'])) {
       $_SESSION["username"] = $user["username"];
       $_SESSION["mail"] = $user["mail"];
       $_SESSION["prenom"] = $user["prenom"];
+      $_SESSION["mdp"] = $user["mot_de_passe"];
+      $_SESSION["argent"] = $user["argent"];
     }
     header('Location:accueil.php');
     die;
