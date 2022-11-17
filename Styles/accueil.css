@@ -1,0 +1,54 @@
+header{
+    height: 35vh;
+    width: 100vw;
+}
+
+h2.titre_paris {
+    margin-left: 50px;
+    text-align: left;
+    color: white;
+}
+
+section.paris_dispo{
+    padding: 20px 15px;
+}
+
+section.paris_dispo .container{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255);
+}
+
+section.paris_dispo .container ul li {
+    display: inline-block;
+}
+
+section.paris_dispo .container ul li a {
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+section.paris_dispo .container ul li  button {
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3C279D;
+    color: white;
+    font-weight:bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    margin: 0 auto;
+}
