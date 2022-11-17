@@ -20,7 +20,7 @@ foreach ($matchs as $match) {
     <section class="paris_dispo">
         <div class="container">
             <ul class="paris_equipe">
-                <li><a href=""><?= $match["equipe1"] ?></a></li>
+                <li><a href="" id="<?= $match["equipe1"] ?>"><?= $match["equipe1"] ?></a></li>
                 <li>VS</li>
                 <li><a href=""><?= $match["equipe2"] ?></a></li>
             </ul>
@@ -28,6 +28,9 @@ foreach ($matchs as $match) {
                 <li><?= $date ?></li>
                 <li><?= $heure ?></li>
             </ul>
+            <form action="" method="post">
+                <input type="int" name="mise" placeholder="L'heure du match" required>
+            </form>
             <ul class="paris_cote">
                 <li><button> <?= $match["cote_equipe1"] ?> </button></li>
                 <li><button> <?= $match["cote_nul"] ?> </button></li>
