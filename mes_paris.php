@@ -10,35 +10,51 @@ if (!isset($_SESSION["id"])) {
  <section class="liste">
         <div class="container">
             <div class="title">
-                <h2>Mes paris </h2>
+                <h2>Mes paris en cours </h2>
             </div>
             <table class="tableau">
                 <tr>
                     <th>Equipe 1</th>
+                    <th>G</th>
+                    <th>VS</th>
+                    <th>G</th>
                     <th>Equipe 2</th>
                     <th>Date</th>
-                    <th>Heure</th>
-                    <th>Cote E1</th>
-                    <th>Cote nul</th>
-                    <th>Cote E2</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
+                    <th>heure</th>
+                    <th>status</th>
+                    <th>mise</th>
+                    <th>Gain Potentiel</th>
                 </tr>
                 <?php
-                $req = $bdd->prepare("SELECT * FROM les_matchs order by la_date, heure");
-                $req->execute();
+                $req = $bdd->prepare("SELECT  lp.ID_match, lp.gain, lp.mise, lm.equipe1, lm.score1, lm.equipe2, lm.score2, lm.la_date, lm.heure, lm.status_match  FROM les_paris as lp INNER JOIN les_matchs as lm on lp.ID_match = lm.ID where ID_utilisateur = :id");
+                $req->execute([
+                    "id" => $_SESSION["id"]
+                ]);
                 while ($match = $req->fetch()) {
+                if($match["status_match"] != 2){
+                    if($match["status_match"] == 0){
+                        $status = "A venir";
+                    }else if($match["status_match"] == 1){
+                        $status = "En cours";
+                    }
+                    $date = strtotime($match["la_date"]);
+                    $date = date("d/m", $date);
+                    $heure = strtotime($match["heure"]);
+                    $heure = date("H:i", $heure);
+                        
                     echo "<tr>";
                     echo "<td>" . $match["equipe1"] . "</td>";
+                    echo "<td>" . $match["score1"] . "</td>";
+                    echo "<td>VS</td>";
+                    echo "<td>" . $match["score2"] . "</td>";
                     echo "<td>" . $match["equipe2"] . "</td>";
-                    echo "<td>" . $match["la_date"] . "</td>";
-                    echo "<td>" . $match["heure"] . "</td>";
-                    echo "<td>" . $match["cote_equipe1"] . "</td>";
-                    echo "<td>" . $match["cote_nul"] . "</td>";
-                    echo "<td>" . $match["cote_equipe2"] . "</td>";
-                    echo "<td><a href='modifier_match.php?id=" . $match["ID"] . "'>Modifier</a></td>";
-                    echo "<td><a href='supprimer_match.php?id=" . $match["ID"] . "'>Supprimer</a></td>";
+                    echo "<td>" . $date . "</td>";
+                    echo "<td>" . $heure . "</td>";
+                    echo "<td>" .$status . "</td>";
+                    echo "<td>" . $match["mise"] .  " €" . "</td>";
+                    echo "<td>" . $match["gain"] .  " €" . "</td>";
                     echo "</tr>";
                 }
+            }   
                 ?>
             </table>
