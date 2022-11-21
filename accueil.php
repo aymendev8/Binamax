@@ -28,14 +28,14 @@ foreach ($matchs as $match) {
                 <li><?= $date ?></li>
                 <li><?= $heure ?></li>
             </ul>
-            <form action="" method="post">
-                <input type="int" name="mise" placeholder="L'heure du match" required>
-            </form>
+            <form action="" method="POST">
+                <input type="int" name="mise" placeholder="Votre mise : " required>
             <ul class="paris_cote">
-                <li><button> <?= $match["cote_equipe1"] ?> </button></li>
-                <li><button> <?= $match["cote_nul"] ?> </button></li>
-                <li><button> <?= $match["cote_equipe2"] ?> </button></li>
+                <li><button type="submit" value="<?= $match["cote_equipe1"] ?>"> <?= $match["cote_equipe1"] ?> </button></li>
+                <li><button type="submit"> <?= $match["cote_nul"] ?> </button></li>
+                <li><button type="submit"> <?= $match["cote_equipe2"] ?> </button></li>
             </ul>
+            </form>
         </div>
     </section>
 <?php

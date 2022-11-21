@@ -24,7 +24,7 @@ if (isset($_POST["equipe1"])) {
 
 <div class="staff">
     <link rel="stylesheet" href="Styles/edit.css">
-    <link rel="stylesheet" href="Styles/staffmenu.css">
+    <link rel="stylesheet" href="Styles/tableau.css">
     <br>
     <section id="edit">
         <div class="container">

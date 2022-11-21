@@ -30,6 +30,7 @@ section.paris_dispo .container ul li {
 }
 
 section.paris_dispo .container ul li a {
+    text-align: center;
     font-size: 1.5em;
     color: black;
     text-decoration: none;
@@ -51,8 +52,8 @@ section.paris_dispo .container ul li  button {
     cursor: pointer;
     outline: none;
     margin: 0 auto;
+    align-items: center;
 }
-
 
 section.paris_dispo .container form {
     display: flex;
@@ -61,7 +62,7 @@ section.paris_dispo .container form {
     max-width: 600px;
 }
 section.paris_dispo .container form input {
-    width: 47%;
+    width: 100%;
  }
 
 section.paris_dispo .container form input:hover{
