@@ -20,6 +20,8 @@ if (isset($_POST["equipe1"])) {
         "cote_nul" => $_POST["cote_nul"]
     ]);
 }
+
+
 ?>
 
 <div class="staff">
@@ -45,7 +47,7 @@ if (isset($_POST["equipe1"])) {
     <section class="liste">
         <div class="container">
             <div class="title">
-                <h2>Liste des matchs</h2>
+                <h2>Liste des matchs en cours</h2>
             </div>
             <table class="tableau">
                 <tr>
@@ -63,17 +65,57 @@ if (isset($_POST["equipe1"])) {
                 $req = $bdd->prepare("SELECT * FROM les_matchs order by la_date, heure");
                 $req->execute();
                 while ($match = $req->fetch()) {
-                    echo "<tr>";
-                    echo "<td>" . $match["equipe1"] . "</td>";
-                    echo "<td>" . $match["equipe2"] . "</td>";
-                    echo "<td>" . $match["la_date"] . "</td>";
-                    echo "<td>" . $match["heure"] . "</td>";
-                    echo "<td>" . $match["cote_equipe1"] . "</td>";
-                    echo "<td>" . $match["cote_nul"] . "</td>";
-                    echo "<td>" . $match["cote_equipe2"] . "</td>";
-                    echo "<td><a href='modifier_match.php?id=" . $match["ID"] . "'>Modifier</a></td>";
-                    echo "<td><a href='supprimer_match.php?id=" . $match["ID"] . "'>Supprimer</a></td>";
-                    echo "</tr>";
+                    if($match["status_match"] != 2){
+                        echo "<tr>";
+                        echo "<td>" . $match["equipe1"] . "</td>";
+                        echo "<td>" . $match["equipe2"] . "</td>";
+                        echo "<td>" . $match["la_date"] . "</td>";
+                        echo "<td>" . $match["heure"] . "</td>";
+                        echo "<td>" . $match["cote_equipe1"] . "</td>";
+                        echo "<td>" . $match["cote_nul"] . "</td>";
+                        echo "<td>" . $match["cote_equipe2"] . "</td>";
+                        echo "<td><a href='modifier_match.php?id=" . $match["ID"] . "'>Modifier</a></td>";
+                        echo "<td><a href='supprimer_match.php?id=" . $match["ID"] . "'>Supprimer</a></td>";
+                        echo "</tr>";
+                    }
+                }
+                ?>
+            </table>
+        </div>
+    </section>
+    <section class="liste">
+        <div class="container">
+            <div class="title">
+                <h2>Liste des matchs fini</h2>
+            </div>
+            <table class="tableau">
+                <tr>
+                    <th>Equipe 1</th>
+                    <th>Equipe 2</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Vainqueur</th>
+                    <th>status</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                </tr>
+                <?php
+                $req = $bdd->prepare("SELECT * FROM les_matchs order by la_date, heure");
+                $req->execute();
+                while ($match = $req->fetch()) {
+                    if($match["status_match"] == 2){
+                        $status = "Terminer";
+                        echo "<tr>";
+                        echo "<td>" . $match["equipe1"] . "</td>";
+                        echo "<td>" . $match["equipe2"] . "</td>";
+                        echo "<td>" . $match["la_date"] . "</td>";
+                        echo "<td>" . $match["heure"] . "</td>";
+                        echo "<td>" . $match["vainqueur"] . "</td>";
+                        echo "<td>" . $status . "</td>";
+                        echo "<td><a href='modifier_match.php?id=" . $match["ID"] . "'>Modifier</a></td>";
+                        echo "<td><a href='supprimer_match.php?id=" . $match["ID"] . "'>Supprimer</a></td>";
+                        echo "</tr>";
+                    }
                 }
                 ?>
             </table>
@@ -107,10 +149,12 @@ if (isset($_POST["equipe1"])) {
                     // empecher la modification d'un admin
                     if ($user["administrateur"] == 0) {
                         echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Modifier</a></td>";
+                        echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Supprimer</a></td>";
                     } else {
                         echo "<td></td>";
+                        echo "<td></td>";
                     }
-                    echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Supprimer</a></td>";
+                    
                     echo "</tr>";
                 }
                 ?>
