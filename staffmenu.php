@@ -31,17 +31,17 @@ if (isset($_POST["equipe1"])) {
     <section id="edit">
         <div class="container">
             <div class="title">
-                <h2>Creer un match</h2>
+                <h2>Créer un match</h2>
             </div>
             <form action="#" method="POST">
-                <input type="text" name="equipe1" placeholder="Nom de l'equipe 1" required>
-                <input type="text" name="equipe2" placeholder="Nom de l'equipe 2" required>
+                <input type="text" name="equipe1" placeholder="Nom de l'équipe 1" required>
+                <input type="text" name="equipe2" placeholder="Nom de l'équipe 2" required>
                 <input type="date" name="la_date" placeholder="La date du match" required>
                 <input type="time" name="heure" placeholder="L'heure du match" required>
-                <input type="int" name="cote_equipe1" placeholder="la cote de equipe 1" required>
-                <input type="int" name="cote_equipe2" placeholder="la cote de equipe 2" required>
-                <input type="int" name="cote_nul" placeholder="la cote match nul " required>
-                <button type="submit" name="submit" id="creer">Creer</button>
+                <input type="int" name="cote_equipe1" placeholder="La cote de l'équipe 1" required>
+                <input type="int" name="cote_equipe2" placeholder="La cote de l'équipe 2" required>
+                <input type="int" name="cote_nul" placeholder="La cote match nul " required>
+                <button type="submit" name="submit" id="creer">Créer</button>
             </form>
     </section>
     <section class="liste">
@@ -86,7 +86,7 @@ if (isset($_POST["equipe1"])) {
     <section class="liste">
         <div class="container">
             <div class="title">
-                <h2>Liste des matchs fini</h2>
+                <h2>Liste des matchs terminés</h2>
             </div>
             <table class="tableau">
                 <tr>
@@ -95,7 +95,7 @@ if (isset($_POST["equipe1"])) {
                     <th>Date</th>
                     <th>Heure</th>
                     <th>Vainqueur</th>
-                    <th>status</th>
+                    <th>Status</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
@@ -130,7 +130,7 @@ if (isset($_POST["equipe1"])) {
                 <tr>
                     <th>Username</th>
                     <th>Nom</th>
-                    <th>Prenom</th>
+                    <th>Prénom</th>
                     <th>Mail</th>
                     <th>Argent</th>
                     <th>Modifier</th>

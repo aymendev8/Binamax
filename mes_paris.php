@@ -19,9 +19,9 @@ if (!isset($_SESSION["id"])) {
                     <th>G</th>
                     <th>Equipe 2</th>
                     <th>Date</th>
-                    <th>heure</th>
-                    <th>status</th>
-                    <th>mise</th>
+                    <th>Heure</th>
+                    <th>Status</th>
+                    <th>Mise</th>
                     <th>Gain Potentiel</th>
                 </tr>
                 <?php
@@ -62,7 +62,7 @@ if (!isset($_SESSION["id"])) {
     <section class="liste">
         <div class="container">
             <div class="title">
-                <h2>Mes paris Terminé  </h2>
+                <h2> Historique des paris  </h2>
             </div>
             <table class="tableau">
                 <tr>
@@ -72,10 +72,10 @@ if (!isset($_SESSION["id"])) {
                     <th>G</th>
                     <th>Equipe 2</th>
                     <th>Date</th>
-                    <th>heure</th>
-                    <th>status</th>
-                    <th>mise</th>
-                    <th>Gain Potentiel</th>
+                    <th>Heure</th>
+                    <th>Status</th>
+                    <th>Mise</th>
+                    <th>Gain potentiel</th>
                     <th>Etat</th>
                 </tr>
                 <?php

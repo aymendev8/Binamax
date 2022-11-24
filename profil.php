@@ -42,10 +42,10 @@ require_once("navbar.php");
                     <h2>Modifier le profil</h2>
                 </div>
                 <form action="#" method="POST">
-                    <input value="<?= $_SESSION["username"] ?>" type="text" name="username" placeholder="Votre username" required>
+                    <input value="<?= $_SESSION["username"] ?>" type="text" name="username" placeholder="Votre nom d'utilisateur" required>
                     <input value="<?= $_SESSION["nom"] ?>" type="text" name="nom" placeholder="Votre nom" required>
                     <input value="<?= $_SESSION["prenom"] ?>" type="text" name="prenom" placeholder="Votre prenom" required>
-                    <input value="<?= $_SESSION["mail"] ?>" type="mail" name="mail" placeholder="votre adresse mail" required>
+                    <input value="<?= $_SESSION["mail"] ?>" type="mail" name="mail" placeholder="Votre adresse mail" required>
                     <input type="number" name="argent"  placeholder="Combien d'argent ajouter ?">
                     <button type="submit" name="submit">Modifier</button>
                 </form>

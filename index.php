@@ -30,20 +30,20 @@ if (isset($_POST['username']) && isset($_POST['mdp'])) {
 
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Binamax</h2>
-              <p class="text-white-50 mb-5">Entrer vos identifiants pour vous connectez !</p>
+              <p class="text-white-50 mb-5">Entrez vos identifiants pour vous connectez !</p>
               <form action="" method="POST">
                 <div class="form-outline form-white mb-4">
                   <input type="text" name="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" />
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="password" name="mdp" class="form-control form-control-lg" placeholder="mot de passe" />
+                  <input type="password" name="mdp" class="form-control form-control-lg" placeholder="Mot de passe" />
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Se connecter</button>
               </form>
             </div>
 
             <div>
-              <p class="mb-0">Pas de compte? <a href="creercompte.php" class="text-white-50 fw-bold">créer un compte </a>
+              <p class="mb-0">Pas de compte? <a href="creercompte.php" class="text-white-50 fw-bold">Créer un compte </a>
               </p>
             </div>

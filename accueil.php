@@ -129,7 +129,7 @@ if (isset($_POST["match_nul"]) && $_SESSION["argent"] >= $_POST["mise"]) {
 require_once("navbar.php");
 ?>
 <link rel="stylesheet" href="Styles/accueil.css">
-<h2 class="titre_paris">Les paris disponible</h2>
+<h2 class="titre_paris">Paris disponibles </h2>
 <?php
 foreach ($matchs as $match) {
     if ($match["status_match"] != 2) {
