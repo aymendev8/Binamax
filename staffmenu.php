@@ -65,7 +65,7 @@ if (isset($_POST["equipe1"])) {
                 $req = $bdd->prepare("SELECT * FROM les_matchs order by la_date, heure");
                 $req->execute();
                 while ($match = $req->fetch()) {
-                    if($match["status_match"] != 2){
+                    if ($match["status_match"] != 2) {
                         echo "<tr>";
                         echo "<td>" . $match["equipe1"] . "</td>";
                         echo "<td>" . $match["equipe2"] . "</td>";
@@ -103,7 +103,7 @@ if (isset($_POST["equipe1"])) {
                 $req = $bdd->prepare("SELECT * FROM les_matchs order by la_date, heure");
                 $req->execute();
                 while ($match = $req->fetch()) {
-                    if($match["status_match"] == 2){
+                    if ($match["status_match"] == 2) {
                         $status = "Terminer";
                         echo "<tr>";
                         echo "<td>" . $match["equipe1"] . "</td>";
@@ -137,8 +137,7 @@ if (isset($_POST["equipe1"])) {
                     <th>Supprimer</th>
                 </tr>
                 <?php
-                $req = $bdd->prepare("SELECT * FROM utilisateurs");
-                $req->execute();
+                $req = $bdd->query("SELECT * FROM utilisateurs");
                 while ($user = $req->fetch()) {
                     echo "<tr>";
                     echo "<td>" . $user["username"] . "</td>";
@@ -154,7 +153,7 @@ if (isset($_POST["equipe1"])) {
                         echo "<td></td>";
                         echo "<td></td>";
                     }
-                    
+
                     echo "</tr>";
                 }
                 ?>
