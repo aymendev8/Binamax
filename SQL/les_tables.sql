@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 21 nov. 2022 à 23:01
+-- Généré le : dim. 04 déc. 2022 à 13:32
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -47,9 +47,10 @@ CREATE TABLE `les_matchs` (
 --
 
 INSERT INTO `les_matchs` (`ID`, `equipe1`, `equipe2`, `score1`, `score2`, `la_date`, `heure`, `cote_equipe1`, `cote_equipe2`, `cote_nul`, `vainqueur`, `status_match`) VALUES
-(1, 'Maroc', 'Croatie', 1, 0, '2022-11-23', '11:00:00', 4.3, 2.18, 3.2, '', 1),
-(2, 'Belgique', 'Maroc', 0, 0, '2022-11-27', '14:00:00', 1.55, 5.65, 4, NULL, 0),
-(3, 'Maroc', 'Canada', 0, 0, '2022-12-01', '16:00:00', 2.4, 2.9, 3.2, NULL, 0);
+(1, 'Maroc', 'Croatie', 1, 0, '2022-11-23', '11:00:00', 4.3, 2.18, 3.2, 'Maroc', 2),
+(2, 'Belgique', 'Maroc', 0, 2, '2022-11-27', '14:00:00', 1.55, 5.65, 4, 'Maroc', 2),
+(3, 'Maroc', 'Canada', 3, 0, '2022-12-01', '16:00:00', 2.4, 2.9, 3.2, 'Maroc', 2),
+(4, 'France', 'Pologne', 3, 1, '2022-12-04', '16:00:00', 1.27, 10.5, 5.3, 'Match nul', 2);
 
 -- --------------------------------------------------------
 
@@ -64,17 +65,21 @@ CREATE TABLE `les_paris` (
   `equipe` varchar(30) DEFAULT NULL,
   `mise` float DEFAULT NULL,
   `la_cote` double DEFAULT NULL,
-  `gain` double DEFAULT NULL
+  `gain` double DEFAULT NULL,
+  `est_payer` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `les_paris`
 --
 
-INSERT INTO `les_paris` (`ID`, `ID_utilisateur`, `ID_match`, `equipe`, `mise`, `la_cote`, `gain`) VALUES
-(18, 3, 1, 'Maroc', 7, 4.3, 30.1),
-(19, 3, 2, 'Maroc', 100, 5.65, 565),
-(20, 3, 3, 'Maroc', 100, 2.4, 240);
+INSERT INTO `les_paris` (`ID`, `ID_utilisateur`, `ID_match`, `equipe`, `mise`, `la_cote`, `gain`, `est_payer`) VALUES
+(18, 3, 1, 'Maroc', 7, 4.3, 30.1, 1),
+(19, 3, 2, 'Maroc', 100, 5.65, 565, 1),
+(20, 3, 3, 'Maroc', 100, 2.4, 240, 1),
+(21, 3, 1, 'Maroc', 1000, 4.3, 4300, 1),
+(22, 3, 4, 'Pologne', 1000, 10.5, 10500, 0),
+(23, 3, 3, 'Maroc', 4378, 2.4, 10507.2, 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +104,7 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`ID`, `username`, `prenom`, `nom`, `mail`, `mot_de_passe`, `administrateur`, `argent`) VALUES
 (1, 'Aymenn8', 'Aymen', 'Kadri', 'aymenkadri798@gmail.com', '882baf28143fb700b388a87ef561a6e5', NULL, 10),
-(3, 'admin', 'admin', 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 1, 293),
+(3, 'admin', 'admin', 'admin', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', 1, 10747.5),
 (4, 'Rouissimo03', 'Mohamed', 'Rouissi', 'mohamedrouissi@gmail.com', '7463502acdddabd3faa829c197c4f8ec', NULL, 110);
 
 --
@@ -134,13 +139,13 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `les_matchs`
 --
 ALTER TABLE `les_matchs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `les_paris`
 --
 ALTER TABLE `les_paris`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
