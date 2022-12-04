@@ -148,7 +148,7 @@ if (isset($_POST["equipe1"])) {
                     // empecher la modification d'un admin
                     if ($user["administrateur"] == 0) {
                         echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Modifier</a></td>";
-                        echo "<td><a href='modifier_utilisateurs.php?id=" . $user["ID"] . "'>Supprimer</a></td>";
+                        echo "<td><a href='supprimer_utilisateurs.php?id=" . $user["ID"] . "'>Supprimer</a></td>";
                     } else {
                         echo "<td></td>";
                         echo "<td></td>";
