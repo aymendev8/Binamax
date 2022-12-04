@@ -43,12 +43,16 @@ if (isset($_POST['equipe1']) && isset($_POST['equipe2'])) {
             <input value="<?= $match['score2'] ?>" type="text" name="score2" placeholder="Score de l'equipe 2" required>
             <input value="<?= $match['cote_equipe1'] ?>" type="int" name="cote_equipe1" placeholder="la cote de equipe 1" required>
             <input value="<?= $match['cote_equipe2'] ?>" type="int" name="cote_equipe2" placeholder="la cote de equipe 2" required>
-            <input value="<?= $match['cote_nul'] ?>" type="int" name="cote_nul" placeholder="la cote match nul " required>
-            <input value="<?= $match['status_match'] ?>" type="int" name="status_match" placeholder="Le status du match">
+            <input value="<?= $match['cote_nul'] ?>" type="int" name="cote_nul" placeholder="la cote match nul" required>
+            <select type="int" name="status_match" id="vainqueur" required>
+                <option value="">Le status du match </option>
+                <option value="0">match pas encore commencer</option>
+                <option value="1">match en cours</option>
+                <option value="2">match terminer</option>
+            </select>
             <input value="<?= $match['la_date'] ?>" type="date" name="la_date" placeholder="La date du match" required>
             <input value="<?= $match['heure'] ?>" type="time" name="heure" placeholder="L'heure du match" required>
-            <?php // Pour le status match :  0 = match pas encore commencer ; 1 = match en cours ; 2 = match terminer 
-            ?>
+            <?php // Mettre le vainqueur du match à lorsque le match se fini , sinon ne pas toucher ?>
             <select name="vainqueur" id="vainqueur">
                 <option value="">Le vainqueur du match</option>
                 <option value="<?= $match['equipe1'] ?>"><?= $match['equipe1'] ?></option>
